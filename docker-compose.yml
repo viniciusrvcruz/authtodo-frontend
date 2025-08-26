@@ -1,0 +1,9 @@
+services:
+  authtodo_frontend:
+    build: .
+    container_name: authtodo_frontend
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+    command: ["tail", "-f", "/dev/null"]
