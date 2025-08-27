@@ -22,7 +22,7 @@ const toggleTheme = () => {
       >
         <Icon name="ic:outline-light-mode" size="25" />
       </button>
-      <button class="flex justify-center items-center px-5 py-2 rounded-xl cursor-pointer bg-blue-400 hover:bg-gray-200 dark:hover:bg-gray-800">
+      <button class="flex justify-center items-center px-5 py-2 rounded-xl cursor-pointer bg-blue-400 hover:bg-blue-300 dark:hover:bg-gray-800">
         {{ $t('components.navbar.login') }}
       </button>
     </div>
