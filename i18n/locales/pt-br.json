@@ -4,5 +4,27 @@
     "navbar": {
       "login": "Fazer login"
     }
+  },
+  "login": {
+    "title": "Bem vindo de volta",
+    "subtitle": "Faça login para acessar suas tarefas",
+    "divider": "Ou",
+    "email_placeholder": "Seu melhor email",
+    "continue_button": "Continuar",
+    "auth_providers": {
+      "google": "Continuar com Google",
+      "github": "Continuar com GitHub"
+    }
+  },
+  "landing": {
+    "hero": {
+      "title": "Organize sua vida com simplicidade",
+      "subtitle": "Gerencie suas tarefas de forma intuitiva e mantenha-se produtivo todos os dias.",
+      "features": {
+        "easy": "Fácil de usar",
+        "sync": "Sempre sincronizado",
+        "secure": "100% seguro"
+      }
+    }
   }
 }

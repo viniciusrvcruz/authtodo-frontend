@@ -33,5 +33,9 @@ export default defineNuxtConfig({
       { code: 'en', name: 'English', file: 'en.json' },
       { code: 'pt-br', name: 'Português (Brasil)', file: 'pt-br.json' }
     ]
-  }
+  },
+
+  icon: {
+    componentName: 'NuxtIcon'
+  },
 })
