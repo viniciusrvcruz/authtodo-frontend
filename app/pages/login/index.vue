@@ -1,6 +1,12 @@
 <script lang="ts" setup>
+import LoginForm from '~/components/auth/LoginForm.vue';
 
-const authProviders = ['google', 'github']
+enum AuthProvider {
+  GOOGLE = 'google',
+  GITHUB = 'github',
+}
+
+const authProviders = Object.values(AuthProvider)
 
 </script>
 
@@ -40,7 +46,7 @@ const authProviders = ['google', 'github']
 
     <!-- Login Section -->
     <section class="relative flex justify-center items-center w-full lg:w-2/3">
-      <div class="text-center p-5 w-md space-y-6 shadow-xl rounded-xl">
+      <div class="text-center p-5 mb-20 w-md space-y-6 shadow-xl rounded-xl">
         <h2 class="text-3xl font-bold text-foreground mb-2">
           {{ $t('login.title') }}
         </h2>
@@ -64,18 +70,10 @@ const authProviders = ['google', 'github']
           <span class="h-px flex-1 bg-gray-300 dark:bg-gray-800"></span>
         </div>
 
-        <input
-          type="email"
-          :placeholder="$t('login.email_placeholder')"
-          class="w-full h-12 px-5 rounded-xl bg-gray-100 border border-gray-200 outline-blue-300 outline-offset-2 dark:bg-gray-900 dark:border-gray-800 dark:outline-blue-500 focus:outline-2"
-          required
-        />
-        <button class="w-full h-12 bg-blue-400 rounded-xl cursor-pointer">
-          {{ $t('login.continue_button') }}
-        </button>
+        <LoginForm />
       </div>
 
-      <ToggleThemeButton class="absolute right-0 bottom-0 m-5" />
+      <ToggleThemeButton class="fixed right-0 bottom-0 m-5" />
     </section>
   </div>
 </template>
