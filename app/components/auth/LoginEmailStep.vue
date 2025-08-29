@@ -7,10 +7,22 @@ const email = defineModel('email', {
 
 defineEmits(['submit'])
 
+const onSubmit = async () => {
+    const res = await useFetch('/api/otp/send', {
+      method: 'POST',
+      body: {
+        email: 'teste@gmail.com'
+      },
+    })
+    
+
+  console.log(res)
+}
+
 </script>
 
 <template>
-  <form class="space-y-6" @submit.prevent="$emit('submit')">
+  <form class="space-y-6" @submit.prevent="onSubmit">
     <input
       v-model="email"
       type="email"

@@ -12,7 +12,13 @@ export default defineNuxtConfig({
     ],
   },
 
-  modules: ['@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxt/icon'],
+  modules: [
+    '@nuxtjs/color-mode',
+    '@nuxtjs/i18n',
+    '@nuxt/icon',
+    '@nuxt/ui',
+    'nuxt-auth-sanctum',
+  ],
 
   colorMode: {
     preference: 'system', // default value of $colorMode.preference

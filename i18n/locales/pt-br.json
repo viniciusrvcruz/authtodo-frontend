@@ -14,6 +14,10 @@
     "auth_providers": {
       "google": "Continuar com Google",
       "github": "Continuar com GitHub"
+    },
+    "otp": {
+      "instruction": "Insira o código de 6 dígitos enviado para",
+      "resend_button": "Reenviar"
     }
   },
   "landing": {
