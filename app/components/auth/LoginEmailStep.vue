@@ -7,16 +7,12 @@ const email = defineModel('email', {
 
 defineEmits(['submit'])
 
-const onSubmit = async () => {
-    const res = await useFetch('/api/otp/send', {
-      method: 'POST',
-      body: {
-        email: 'teste@gmail.com'
-      },
-    })
-    
+const service = useAuthService()
 
-  console.log(res)
+const onSubmit = async () => {  
+  const { error } = await service.sendOTP('teste@gmail.com')
+
+  // if(error) // TODO: alert
 }
 
 </script>

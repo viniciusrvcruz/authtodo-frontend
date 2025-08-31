@@ -1,0 +1,1 @@
+export { useAuthService } from '~/composables/services/AuthService'
