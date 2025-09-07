@@ -17,7 +17,11 @@ export const useApiService = () => {
     payload?: object,
     options?: object
   ) => {
-    return useFetch(url, {
+    return $fetch(url, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
       method,
       ...(method === Method.GET ? {query: payload} : {body: payload}),
       baseURL,

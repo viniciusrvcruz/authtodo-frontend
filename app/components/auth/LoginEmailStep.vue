@@ -5,14 +5,20 @@ const email = defineModel('email', {
   required: true,
 })
 
-defineEmits(['submit'])
+const emits = defineEmits(['submit'])
 
 const service = useAuthService()
+const message = useMessage()
 
-const onSubmit = async () => {  
-  const { error } = await service.sendOTP('teste@gmail.com')
+const pendingRequest = ref(false)
 
-  // if(error) // TODO: alert
+const onSubmit = () => {
+  pendingRequest.value = true
+
+  service.sendOTP(email.value)
+    .then(() => emits('submit'))
+    .catch(() => message.show('send_code_error', 'error'))
+    .finally(() => pendingRequest.value = false)
 }
 
 </script>
@@ -26,7 +32,7 @@ const onSubmit = async () => {
       class="w-full h-12 px-5 rounded-xl bg-gray-100 border border-gray-200 outline-blue-300 outline-offset-2 dark:bg-gray-900 dark:border-gray-800 dark:outline-blue-500 focus:outline-2"
       required
     />
-    <button class="w-full h-12 bg-blue-400 rounded-xl cursor-pointer">
+    <button class="w-full h-12 bg-blue-400 rounded-xl cursor-pointer disabled:opacity-80" :disabled="pendingRequest">
       {{ $t('login.continue_button') }}
     </button>
   </form>

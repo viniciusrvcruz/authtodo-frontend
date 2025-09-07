@@ -4,5 +4,6 @@
     <main>
       <NuxtPage />
     </main>
+    <Toast />
   </div>
 </template>

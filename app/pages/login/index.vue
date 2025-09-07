@@ -13,7 +13,7 @@ const authProviders = Object.values(AuthProvider)
 <template>
   <div class="flex flex-wrap min-h-screen">
     <!-- Hero Section -->
-    <section class="flex flex-col justify-center items-center text-white w-full lg:w-1/3 bg-blue-400">
+    <section class="flex-col justify-center items-center text-white w-full hidden lg:w-1/3 bg-blue-400 lg:flex">
       <div class="text-center p-4 max-w-md space-y-6">
         <h1 class="text-4xl font-bold leading-tight">
           {{ $t('landing.hero.title') }}

@@ -1,4 +1,5 @@
 import tailwindcss from "@tailwindcss/vite";
+import Aura from '@primeuix/themes/aura';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -21,8 +22,8 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/i18n',
     '@nuxt/icon',
-    '@nuxt/ui',
     'nuxt-auth-sanctum',
+    '@primevue/nuxt-module'
   ],
 
   colorMode: {
@@ -48,5 +49,14 @@ export default defineNuxtConfig({
 
   icon: {
     componentName: 'NuxtIcon'
+  },
+
+  primevue: {
+    options: {
+      theme: {
+        preset: Aura
+      }
+    },
+    importTheme: { from: '~/assets/theme/primevue.ts' },
   },
 })
