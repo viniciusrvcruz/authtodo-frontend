@@ -1,5 +1,3 @@
-import runtimeConfig from "~/utils/runtimeConfig"
-
 enum Method {
   GET = 'get',
   POST = 'post',
@@ -8,8 +6,9 @@ enum Method {
 }
 
 export const useApiService = () => {
-  const config = runtimeConfig()
-  const baseURL = `${config.apiBaseURL}/api`
+  const config = useRuntimeConfig()
+
+  const baseURL = `${config.public.apiBaseUrl}/api`
 
   const request = (
     method: Method,
