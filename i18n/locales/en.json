@@ -4,5 +4,41 @@
     "navbar": {
       "login": "Login"
     }
+  },
+  "alerts": {
+    "send_code_error": "Unable to send the code to the provided email",
+    "resend_code_success": "The code was resent successfully!",
+    "invalid_code": "Invalid code"
+  },
+  "validations": {
+    "required": "This field is required",
+    "email": "Please enter a valid email address"
+  },
+  "login": {
+    "title": "Access the platform",
+    "subtitle": "Log in to access your tasks",
+    "divider": "Or",
+    "email_placeholder": "Your best email",
+    "continue_button": "Continue",
+    "auth_providers": {
+      "google": "Continue with Google",
+      "github": "Continue with GitHub"
+    },
+    "otp": {
+      "title": "Check your inbox",
+      "instruction": "Enter the verification code we sent to",
+      "resend_button": "Resend"
+    }
+  },
+  "landing": {
+    "hero": {
+      "title": "Organize your life with simplicity",
+      "subtitle": "Manage your tasks intuitively and stay productive every day.",
+      "features": {
+        "easy": "Easy to use",
+        "sync": "Always synced",
+        "secure": "100% secure"
+      }
+    }
   }
 }

@@ -8,6 +8,12 @@ enum AuthProvider {
 
 const authProviders = Object.values(AuthProvider)
 
+const redirect = (provider: AuthProvider) => {
+  const config = useRuntimeConfig()
+
+  window.location.href = `${config.public.apiBaseUrl}/auth/${provider}/redirect`
+}
+
 </script>
 
 <template>
@@ -45,7 +51,7 @@ const authProviders = Object.values(AuthProvider)
     </section>
 
     <!-- Login Section -->
-    <section class="relative flex justify-center items-center w-full lg:w-2/3">
+    <section class="relative flex justify-center items-center p-3 w-full lg:w-2/3">
       <div class="text-center p-5 mb-20 w-md space-y-6 shadow-xl rounded-xl">
         <h2 class="text-3xl font-bold text-foreground mb-2">
           {{ $t('login.title') }}
@@ -58,6 +64,7 @@ const authProviders = Object.values(AuthProvider)
             v-for="provider in authProviders"
             :key="provider"
             class="relative flex justify-center gap-2 items-center w-full h-12 cursor-pointer border border-gray-200 rounded-xl hover:bg-gray-50 hover:shadow-lg/3 dark:border-gray-800 dark:hover:bg-gray-900"
+            @click="redirect(provider)"
           >
             <Icon :name="provider" size="32" class="absolute left-0 ms-3" />
             {{ $t('login.auth_providers.' + provider) }}

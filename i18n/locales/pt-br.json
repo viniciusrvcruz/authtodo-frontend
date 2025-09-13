@@ -15,7 +15,7 @@
     "email": "O campo deve ser um e-mail válido"
   },
   "login": {
-    "title": "Bem vindo de volta",
+    "title": "Acesse a plataforma",
     "subtitle": "Faça login para acessar suas tarefas",
     "divider": "Ou",
     "email_placeholder": "Seu melhor email",
