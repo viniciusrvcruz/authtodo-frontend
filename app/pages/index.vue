@@ -1,5 +1,9 @@
 <script setup>
-
+definePageMeta({
+  sanctum: {
+    excluded: true,
+  }
+})
 </script>
 
 <template>

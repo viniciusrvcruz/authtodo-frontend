@@ -59,4 +59,14 @@ export default defineNuxtConfig({
     },
     importTheme: { from: '~/assets/theme/primevue.ts' },
   },
+
+  sanctum: {
+    redirectIfUnauthenticated: true,
+    redirect: {
+      onAuthOnly: '/login'
+    },
+    globalMiddleware: {
+      enabled: true
+    }
+  }
 })
