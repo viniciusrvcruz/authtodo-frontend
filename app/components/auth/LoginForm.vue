@@ -23,7 +23,7 @@ const onSubmit = () => {
   if(currentStep.value === LoginStep.EMAIL)
     return goToStep(LoginStep.OTP)
 
-  // redirect to home
+  window.location.reload()
 }
 
 </script>

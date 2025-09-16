@@ -1,5 +1,6 @@
 import tailwindcss from "@tailwindcss/vite";
 import Aura from '@primeuix/themes/aura';
+import { getApiBaseUrl } from './app/utils/getApiBaseUrl'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -8,7 +9,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     public: {
-      apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL
+      apiBaseUrl: getApiBaseUrl(),
     }
   },
 
@@ -61,12 +62,15 @@ export default defineNuxtConfig({
   },
 
   sanctum: {
+    baseUrl: getApiBaseUrl(),
+    redirectIfAuthenticated: true,
     redirectIfUnauthenticated: true,
     redirect: {
-      onAuthOnly: '/login'
+      onAuthOnly: '/login',
+      onGuestOnly: '/home'
     },
     globalMiddleware: {
       enabled: true
-    }
+    },
   }
 })

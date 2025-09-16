@@ -1,5 +1,5 @@
 export function useAuthService() {
-  const { post } = useApiService()
+  const { post, get } = useApiService()
 
   const sendOTP = (email: string) => {
     return post('/auth/otp/send', { email })
@@ -9,8 +9,13 @@ export function useAuthService() {
     return post('/auth/otp/verify', { code, email })
   }
 
+  const csrfCookie = () => {
+    return get('/sanctum/csrf-cookie')
+  }
+
   return {
     sendOTP,
     verifyOTP,
+    csrfCookie,
   }
 }

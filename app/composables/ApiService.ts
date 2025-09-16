@@ -7,6 +7,7 @@ enum Method {
 
 export const useApiService = () => {
   const config = useRuntimeConfig()
+  const xsrfToken = useCookie('XSRF-TOKEN')
 
   const baseURL = `${config.public.apiBaseUrl}/api`
 
@@ -20,7 +21,9 @@ export const useApiService = () => {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
+        'X-XSRF-TOKEN': String(xsrfToken.value) ?? null,
       },
+      credentials: 'include',
       method,
       ...(method === Method.GET ? {query: payload} : {body: payload}),
       baseURL,

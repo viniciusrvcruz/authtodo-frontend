@@ -20,6 +20,8 @@ let interval = ref<NodeJS.Timeout|null>(null)
 const verifyCode = async () => {
   if (code.value.length < 6) return
 
+  await service.csrfCookie()
+
   service.verifyOTP(code.value, props.email)
     .then(() => emits('submit'))
     .catch(() => message.show('invalid_code', 'error'))
@@ -31,7 +33,9 @@ const resend = () => {
   service.sendOTP(props.email)
     .then(() => {
       message.show('resend_code_success')
+
       emits('resend')
+
       startCooldown()
     })
     .catch(() => message.show('send_code_error', 'error'))
@@ -44,8 +48,10 @@ const startCooldown = () => {
 
   interval.value = setInterval(() => {
     cooldown.value--
+
     if (cooldown.value <= 0 && interval.value) {
       clearInterval(interval.value)
+
       interval.value = null
     }
   }, 1000)
@@ -54,6 +60,7 @@ const startCooldown = () => {
 onUnmounted(() => {
   if (interval.value) clearInterval(interval.value)
 })
+
 </script>
 
 <template>
