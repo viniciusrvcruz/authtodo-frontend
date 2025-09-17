@@ -3,6 +3,12 @@
   "components": {
     "navbar": {
       "login": "Fazer login"
+    },
+    "modal": {
+      "update_user_name": {
+        "name_label": "Como você se chama",
+        "name_placeholder": "Digite o seu nome"
+      }
     }
   },
   "alerts": {

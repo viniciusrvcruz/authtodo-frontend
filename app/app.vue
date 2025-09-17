@@ -2,7 +2,9 @@
   <div class="dark:bg-gray-950 dark:text-gray-200">
     <!-- <Navbar /> -->
     <main>
-      <NuxtPage />
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
     </main>
     <Toast />
   </div>
