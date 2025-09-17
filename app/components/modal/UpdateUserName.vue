@@ -1,21 +1,43 @@
 <script setup lang="ts">
+import { toTypedSchema } from '@vee-validate/zod';
+import { useForm } from 'vee-validate';
+import { userNameSchema } from '~/types/schemas/User.schema';
+import type { UserName } from '~/types/User.type';
 
+const service = useUserService()
+const alert = useAlert()
+const { refreshIdentity } = useSanctumAuth();
+
+const inputRef = ref()
 const visible = ref(false)
 const pendingRequest = ref(false)
 
+const { errors, defineField, handleSubmit } = useForm<UserName>({
+  validationSchema: toTypedSchema(userNameSchema),
+});
+
+const [name, nameAttrs] = defineField('name');
+
 onMounted(() => {
   visible.value = true
+
+  inputRef.value.focus()
 })
 
-const updateUserName = () => {
+const onSubmit = handleSubmit(() => {
+  pendingRequest.value = true
 
-}
+  service.updateUserName(name.value)
+    .then(() => refreshIdentity())
+    .catch(() => alert.error('update_user_name_error'))
+    .finally(() => pendingRequest.value = false)
+})
 </script>
 
 <template>
-  <div class="fixed inset-0 z-50 flex items-center justify-center bg-primary/10 backdrop-blur-sm">
-    <div class="w-full max-w-md mx-4">
-      <div class="bg-background rounded-2xl p-8 shadow-lg border">
+  <div class="fixed inset-0 z-50 flex items-center justify-center bg-gray-50 dark:bg-gray-950">
+    <div class="relative w-full max-w-md mx-4">
+      <div class="rounded-2xl p-8 border border-gray-300 dark:border-gray-700">
         <div class="text-center mb-6">
           <h1 class="text-2xl font-semibold text-foreground mb-2">
             Como você se chama?
@@ -25,26 +47,26 @@ const updateUserName = () => {
           </p>
         </div>
 
-        <form @submit.prevent="updateUserName" class="space-y-4">
-          <div class="space-y-2">
-            <label for="name" class="block text-sm font-medium text-foreground">Seu nome</label>
+        <form @submit.prevent="onSubmit" class="space-y-6">
+          <div class="space-y-1 text-start">
             <input
-              id="name"
-              type="text"
-              placeholder="Digite seu nome..."
-              class="h-12 text-base w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-              autofocus
+              ref="inputRef"
+              v-model="name"
+              v-bind="nameAttrs"
+              :placeholder="$t('components.modal.update_user_name.name_placeholder')"
+              class="w-full h-12 px-5 rounded-xl bg-gray-100 border border-gray-300 outline-blue-300 outline-offset-2 dark:bg-gray-900 dark:border-gray-700 dark:outline-blue-500 focus:outline-2"
             />
+            <span v-if="errors.name" class="text-red-400 text-sm">
+              {{ $t(`validations.${errors.name}`) }}
+            </span>
           </div>
-
-          <button
-            type="submit"
-            class="w-full h-12 font-medium bg-primary text-white rounded-md hover:bg-primary/90 transition"
-          >
-            Continuar
+          <button class="w-full h-12 bg-blue-400 rounded-xl cursor-pointer disabled:opacity-80" :disabled="pendingRequest">
+            {{ $t('login.continue_button') }}
           </button>
         </form>
       </div>
     </div>
+
+    <ToggleThemeButton class="fixed right-0 bottom-0 m-5 z-50" />
   </div>
 </template>

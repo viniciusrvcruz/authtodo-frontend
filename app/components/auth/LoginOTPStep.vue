@@ -9,7 +9,7 @@ const props = defineProps({
 })
 
 const service = useAuthService()
-const message = useMessage()
+const alert = useAlert()
 
 const code = ref('')
 const emits = defineEmits(['submit', 'resend'])
@@ -24,7 +24,7 @@ const verifyCode = async () => {
 
   service.verifyOTP(code.value, props.email)
     .then(() => emits('submit'))
-    .catch(() => message.show('invalid_code', 'error'))
+    .catch(() => alert.error('invalid_code'))
 }
 
 const resend = () => {
@@ -32,13 +32,13 @@ const resend = () => {
 
   service.sendOTP(props.email)
     .then(() => {
-      message.show('resend_code_success')
+      alert.success('resend_code_success')
 
       emits('resend')
 
       startCooldown()
     })
-    .catch(() => message.show('send_code_error', 'error'))
+    .catch(() => alert.error('send_code_error'))
 }
 
 const startCooldown = () => {

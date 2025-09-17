@@ -14,7 +14,9 @@
   "alerts": {
     "send_code_error": "Não foi possível enviar o código para o email informado",
     "resend_code_success": "O código foi reenviado com sucesso!",
-    "invalid_code": "Código inválido"
+    "invalid_code": "Código inválido",
+    "login_error": "Não foi possível fazer o login",
+    "update_user_name_error": "Não foi possível salvar o nome"
   },
   "validations": {
     "required": "O campo é obrigatório",

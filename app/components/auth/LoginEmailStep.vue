@@ -7,7 +7,7 @@ import { toTypedSchema } from '@vee-validate/zod';
 const emits = defineEmits(['update:email', 'submit'])
 
 const service = useAuthService()
-const message = useMessage()
+const alert = useAlert()
 
 const pendingRequest = ref(false)
 
@@ -25,7 +25,7 @@ const onSubmit = handleSubmit(() => {
       emits('update:email', email.value)
       emits('submit')
     })
-    .catch(() => message.show('send_code_error', 'error'))
+    .catch(() => alert.error('send_code_error'))
     .finally(() => pendingRequest.value = false)
 })
 

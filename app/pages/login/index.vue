@@ -6,7 +6,21 @@ enum AuthProvider {
   GITHUB = 'github',
 }
 
+const route = useRoute()
+const router = useRouter()
+const alert = useAlert()
+
 const authProviders = Object.values(AuthProvider)
+
+onMounted(() => {
+  const { error } = route.query
+
+  if(!error) return
+
+  alert.error('login_error')
+
+  router.replace({ query: {} })
+})
 
 const redirect = (provider: AuthProvider) => {
   const config = useRuntimeConfig()
