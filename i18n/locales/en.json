@@ -3,12 +3,22 @@
   "components": {
     "navbar": {
       "login": "Login"
+    },
+    "modal": {
+      "update_user_name": {
+        "name_label": "What’s your name",
+        "name_placeholder": "Enter your name",
+        "title": "What’s your name?",
+        "subtitle": "Let’s personalize your experience"
+      }
     }
   },
   "alerts": {
     "send_code_error": "Unable to send the code to the provided email",
     "resend_code_success": "The code was resent successfully!",
-    "invalid_code": "Invalid code"
+    "invalid_code": "Invalid code",
+    "login_error": "Unable to log in",
+    "update_user_name_error": "Unable to save the name"
   },
   "validations": {
     "required": "This field is required",

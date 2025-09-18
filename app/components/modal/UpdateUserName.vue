@@ -40,10 +40,10 @@ const onSubmit = handleSubmit(() => {
       <div class="rounded-2xl p-8 border border-gray-300 dark:border-gray-700">
         <div class="text-center mb-6">
           <h1 class="text-2xl font-semibold text-foreground mb-2">
-            Como você se chama?
+            {{ $t('components.modal.update_user_name.title') }}
           </h1>
           <p class="text-muted-foreground">
-            Vamos personalizar sua experiência
+            {{ $t('components.modal.update_user_name.subtitle') }}
           </p>
         </div>
 

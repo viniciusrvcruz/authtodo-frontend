@@ -7,7 +7,9 @@
     "modal": {
       "update_user_name": {
         "name_label": "Como você se chama",
-        "name_placeholder": "Digite o seu nome"
+        "name_placeholder": "Digite o seu nome",
+        "title": "Como você se chama?",
+        "subtitle": "Vamos personalizar sua experiência"
       }
     }
   },
