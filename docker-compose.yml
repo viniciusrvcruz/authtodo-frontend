@@ -1,6 +1,6 @@
 services:
   authtodo_frontend:
-    image: node:22.0
+    image: node:24.0
     container_name: authtodo_frontend
     working_dir: /app
     volumes:
