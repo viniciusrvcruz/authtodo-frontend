@@ -11,6 +11,15 @@
         "title": "Como você se chama?",
         "subtitle": "Vamos personalizar sua experiência"
       }
+    },
+    "home": {
+      "navbar": {
+        "my_tasks": "Minhas tarefas",
+        "description": "Organize seu dia com simplicidade"
+      },
+      "user_menu": {
+        "logout": "Sair"
+      }
     }
   },
   "alerts": {

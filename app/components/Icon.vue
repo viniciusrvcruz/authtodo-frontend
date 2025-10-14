@@ -17,6 +17,8 @@ const ICON_MAP = {
   circle_check: 'lucide:circle-check-big',
   light_mode: 'ic:outline-light-mode',
   dark_mode: 'ic:outline-dark-mode',
+  check_circle: 'lucide:check-circle-2',
+  user: 'mdi:user',
 }
 
 </script>
