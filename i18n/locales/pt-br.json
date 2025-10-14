@@ -13,7 +13,7 @@
       }
     },
     "home": {
-      "navbar": {
+      "header": {
         "my_tasks": "Minhas tarefas",
         "description": "Organize seu dia com simplicidade"
       },
