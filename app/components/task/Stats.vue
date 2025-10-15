@@ -10,7 +10,7 @@
       </div>
       <div>
         <h3 class="font-semibold sm:font-bold text-gray-400 leading-none text-sm sm:text-base">
-          Total
+          {{ $t('components.home.task.stats.total') }}
         </h3>
         <span class="font-bold text-2xl sm:text-3xl">3</span>
       </div>
@@ -22,7 +22,7 @@
       </div>
       <div>
         <h3 class="font-semibold sm:font-bold text-gray-400 leading-none text-sm sm:text-base">
-          Concluídas
+          {{ $t('components.home.task.stats.completed') }}
         </h3>
         <div class="flex gap-2 items-end">
           <span class="font-bold text-2xl sm:text-3xl">1</span>
@@ -37,7 +37,7 @@
       </div>
       <div>
         <h3 class="font-semibold sm:font-bold text-gray-400 leading-none text-sm sm:text-base">
-          Ativas
+          {{ $t('components.home.task.stats.active') }}
         </h3>
         <span class="font-bold text-2xl sm:text-3xl">1</span>
       </div>

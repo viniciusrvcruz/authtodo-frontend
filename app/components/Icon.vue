@@ -21,6 +21,7 @@ const ICON_MAP = {
   user: 'mdi:user',
   list_todo: 'lucide:list-todo',
   circle: 'lucide:circle',
+  plus: 'lucide:plus',
 }
 
 </script>
