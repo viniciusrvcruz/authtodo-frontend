@@ -29,6 +29,11 @@
         "form": {
           "placeholder": "Adicionar nova tarefa...",
           "add": "Adicionar"
+        },
+        "filters": {
+          "all": "Todas ({count})",
+          "active": "Ativas ({count})",
+          "completed": "Concluídas ({count})"
         }
       }
     }

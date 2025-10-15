@@ -12,7 +12,7 @@ const onSubmit = (event: Event) => {
   <form class="flex space-x-2" @submit.prevent="onSubmit">
     <input
       type="text"
-      class="ps-4 rounded-xl border border-gray-400 h-12 flex-1 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 dark:border-gray-600"
+      class="ps-4 rounded-xl border border-gray-300 h-12 flex-1 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 dark:border-gray-600"
       name="task"
       :placeholder="$t('components.home.task.form.placeholder')"
     >
