@@ -1,24 +1,67 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 
-const onSubmit = (event: Event) => {
-  const form = event.target as HTMLFormElement
-  const formData = new FormData(form)
+const service = useTaskService()
+const alert = useAlert()
+const taskStore = useTaskStore()
 
-  console.log(formData.get('task'))
+const DEFAULT_TASK_FORM = {
+  name: '',
+  description: '',
+}
+
+const task = ref({ ...DEFAULT_TASK_FORM })
+
+const onSubmit = () => {
+  if(!task.value.name.trim()) return
+
+  service.create(task.value)
+    .then(taskCreated => {
+      taskStore.add(taskCreated)
+
+      alert.success('create_task_success')
+
+      task.value = { ...DEFAULT_TASK_FORM }
+    })
+    .catch(() => alert.success('create_task_error'))
 }
 </script>
 
 <template>
-  <form class="flex space-x-2" @submit.prevent="onSubmit">
-    <input
-      type="text"
-      class="ps-4 rounded-xl border border-gray-300 h-12 flex-1 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 dark:border-gray-600"
-      name="task"
-      :placeholder="$t('components.home.task.form.placeholder')"
+  <form class="flex flex-col gap-2" @submit.prevent="onSubmit">
+    <div class="flex gap-2 w-full">
+      <FloatLabel
+        variant="on"
+        class="w-full"
+      >
+        <InputText
+          v-model="task.name"
+          id="name"
+          rows="2"
+          class="w-full !rounded-xl"
+        />
+        <label for="name" class="text-sm">
+          {{ $t('components.home.task.form.name_placeholder') }}
+        </label>
+      </FloatLabel>
+      <button class="flex justify-center items-center gap-1 py-2 px-5 rounded-xl bg-blue-400 text-white cursor-pointer">
+        <Icon name="plus" size="20" />
+        {{ $t('components.home.task.form.add') }}
+      </button>
+    </div>
+
+    <FloatLabel
+      variant="on"
+      class="w-full"
     >
-    <button class="flex justify-center items-center gap-1 py-2 px-5 rounded-xl bg-blue-400 text-white cursor-pointer">
-      <Icon name="plus" size="20" />
-      {{ $t('components.home.task.form.add') }}
-    </button>
+      <Textarea
+        v-model="task.description"
+        id="description"
+        rows="2"
+        class="w-full !rounded-xl"
+      />
+      <label for="description" class="text-sm">
+        {{ $t('components.home.task.form.description_placeholder') }}
+      </label>
+    </FloatLabel>
   </form>
 </template>

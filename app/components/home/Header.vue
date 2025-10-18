@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <header class="w-full flex justify-between px-3 py-2 sm:px-12 md:px-20 lg:px-32 xl:px-52 xl:py-3">
+  <header class="w-full flex justify-between px-3 py-2 sm:px-12 md:px-20 lg:px-32 xl:px-52 2xl:px-96 xl:py-3">
     <div class="flex items-center space-x-3">
       <div class="flex p-2 rounded-2xl bg-blue-500">
         <Icon name="check_circle" :size="25" class="text-white" />

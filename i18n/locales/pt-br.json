@@ -27,7 +27,8 @@
           "active": "Ativas"
         },
         "form": {
-          "placeholder": "Adicionar nova tarefa...",
+          "name_placeholder": "Adicionar nova tarefa",
+          "description_placeholder": "Descrição (opicional)",
           "add": "Adicionar"
         },
         "filters": {
@@ -43,7 +44,9 @@
     "resend_code_success": "O código foi reenviado com sucesso!",
     "invalid_code": "Código inválido",
     "login_error": "Não foi possível fazer o login",
-    "update_user_name_error": "Não foi possível salvar o nome"
+    "update_user_name_error": "Não foi possível salvar o nome",
+    "create_task_success": "Tarefa criada com sucesso",
+    "create_task_error": "Não foi possível criar a tarefa"
   },
   "validations": {
     "required": "O campo é obrigatório",
