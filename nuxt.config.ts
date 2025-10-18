@@ -24,7 +24,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/icon',
     'nuxt-auth-sanctum',
-    '@primevue/nuxt-module'
+    '@primevue/nuxt-module',
+    '@pinia/nuxt',
   ],
 
   colorMode: {
