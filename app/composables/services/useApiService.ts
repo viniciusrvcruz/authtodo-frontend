@@ -35,7 +35,7 @@ export const useApiService = () => {
     return request(Method.GET, url, query, options)
   }
 
-  const post = (url: string, body: object, options?: object) => {
+  const post = (url: string, body?: object, options?: object) => {
     return request(Method.POST, url, body, options)
   }
 

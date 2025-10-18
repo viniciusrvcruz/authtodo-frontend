@@ -67,10 +67,14 @@ export default defineNuxtConfig({
     redirectIfUnauthenticated: true,
     redirect: {
       onAuthOnly: '/login',
-      onGuestOnly: '/home'
+      onGuestOnly: '/home',
+      onLogout: '/login',
     },
     globalMiddleware: {
       enabled: true
+    },
+    endpoints: {
+      logout: '/api/auth/logout'
     },
   }
 })

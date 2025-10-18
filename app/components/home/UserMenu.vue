@@ -2,7 +2,7 @@
 import type { User } from '~/types/User.type';
 
 const { t } = useI18n()
-const { user } = useSanctumAuth<User>()
+const { user, logout } = useSanctumAuth<User>()
 
 const menu = ref();
 const items = ref([
@@ -12,9 +12,7 @@ const items = ref([
   {
     label: t('components.home.user_menu.logout'),
     icon: 'pi pi-plus',
-    command: () => {
-      console.log('logout')
-    }
+    command: logout
   },
 ]);
 
