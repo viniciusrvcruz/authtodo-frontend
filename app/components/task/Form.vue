@@ -29,39 +29,24 @@ const onSubmit = () => {
 <template>
   <form class="flex flex-col gap-2" @submit.prevent="onSubmit">
     <div class="flex gap-2 w-full">
-      <FloatLabel
-        variant="on"
-        class="w-full"
-      >
-        <InputText
-          v-model="task.name"
-          id="name"
-          rows="2"
-          class="w-full !rounded-xl"
-        />
-        <label for="name" class="text-sm">
-          {{ $t('components.home.task.form.name_placeholder') }}
-        </label>
-      </FloatLabel>
+      <FloatInput
+        v-model="task.name"
+        :placeholder="$t('components.home.task.form.name_placeholder')"
+        input-id="name"
+        type="text"
+      />
       <button class="flex justify-center items-center gap-1 py-2 px-5 rounded-xl bg-blue-400 text-white cursor-pointer">
         <Icon name="plus" size="20" />
         {{ $t('components.home.task.form.add') }}
       </button>
     </div>
 
-    <FloatLabel
-      variant="on"
-      class="w-full"
-    >
-      <Textarea
-        v-model="task.description"
-        id="description"
-        rows="2"
-        class="w-full !rounded-xl"
-      />
-      <label for="description" class="text-sm">
-        {{ $t('components.home.task.form.description_placeholder') }}
-      </label>
-    </FloatLabel>
+    <FloatInput
+      v-model="task.description"
+      :placeholder="$t('components.home.task.form.description_placeholder')"
+      :rows="2"
+      input-id="description"
+      type="textarea"
+    />
   </form>
 </template>

@@ -27,7 +27,7 @@
           "active": "Ativas"
         },
         "form": {
-          "name_placeholder": "Adicionar nova tarefa",
+          "name_placeholder": "Nome da tarefa",
           "description_placeholder": "Descrição (opicional)",
           "add": "Adicionar"
         },

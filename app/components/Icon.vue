@@ -22,6 +22,9 @@ const ICON_MAP = {
   list_todo: 'lucide:list-todo',
   circle: 'lucide:circle',
   plus: 'lucide:plus',
+  check: 'lucide:check',
+  trash: 'lucide:trash-2',
+  pencil: 'lucide:pencil',
 }
 
 </script>
