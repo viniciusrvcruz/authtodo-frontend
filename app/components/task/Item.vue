@@ -8,7 +8,7 @@ const props = defineProps<{
 const editingTask = ref<Task | null>(null)
 
 const startEdit = () => {
-  editingTask.value = structuredClone(props.task)
+  editingTask.value = {...props.task}
 }
 
 </script>
@@ -19,28 +19,36 @@ const startEdit = () => {
       <Icon name="check" size="20" />
     </button>
 
-    <form v-if="editingTask" class="flex-1">
-      <FloatInput
-        v-model="editingTask.name"
-        input-id="task_name_edit"
-        type="text"
-        :placeholder="$t('components.home.task.form.name_placeholder')"
-      />
-    </form>
-    <span v-else class="line-through flex-1 cursor-pointer">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus dolor quas voluptatibus doloremque corrupti quidem reiciendis vero impedit ea quisquam enim dolores voluptas id atque distinctio, ipsum laudantium eaque laboriosam!
-    </span>
+    <TaskFormUpdate
+      v-if="editingTask"
+      v-model="editingTask"
+      @close="editingTask = null"
+    />
 
-    <div class="flex gap-1">
-      <button
-        class="flex justify-center items-center p-2 cursor-pointer rounded-xl text-gray-500 aspect-square hover:bg-gray-200"
-        @click="startEdit"
+    <div v-else class="flex w-full items-center">
+      <div
+        class="flex flex-col line-through flex-1"
+        :class="{'line-through': task.is_completed}"
       >
-        <Icon name="pencil" size="20" />
-      </button>
-      <button class="flex justify-center items-center p-2 cursor-pointer rounded-xl text-gray-500 aspect-square hover:bg-gray-200 hover:text-red-400">
-        <Icon name="trash" size="20" />
-      </button>
+        <span class="cursor-pointer break-all">
+          {{ task.name }}
+        </span>
+        <span class="text-sm text-gray-400 cursor-pointer break-all">
+          {{ task.description }}
+        </span>
+      </div>
+
+      <div class="flex gap-1">
+        <button
+          class="flex justify-center items-center p-2 cursor-pointer rounded-xl text-gray-500 aspect-square hover:bg-gray-200"
+          @click="startEdit"
+        >
+          <Icon name="pencil" size="20" />
+        </button>
+        <button class="flex justify-center items-center p-2 cursor-pointer rounded-xl text-gray-500 aspect-square hover:bg-gray-200 hover:text-red-400">
+          <Icon name="trash" size="20" />
+        </button>
+      </div>
     </div>
   </div>
 </template>

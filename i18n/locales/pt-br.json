@@ -46,7 +46,10 @@
     "login_error": "Não foi possível fazer o login",
     "update_user_name_error": "Não foi possível salvar o nome",
     "create_task_success": "Tarefa criada com sucesso",
-    "create_task_error": "Não foi possível criar a tarefa"
+    "create_task_error": "Não foi possível criar a tarefa",
+    "get_tasks_error": "Não foi possível trazer as tarefas",
+    "update_task_success": "Tarefa editada com sucesso",
+    "update_task_error": "Não foi possível editar a tarefa"
   },
   "validations": {
     "required": "O campo é obrigatório",

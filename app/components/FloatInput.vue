@@ -2,7 +2,7 @@
 import InputText from 'primevue/inputtext'
 import Textarea from 'primevue/textarea'
 
-const model = defineModel<string>()
+const model = defineModel<string | null>()
 
 defineProps<{
   type?: 'text' | 'textarea'

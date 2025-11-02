@@ -25,6 +25,7 @@ const ICON_MAP = {
   check: 'lucide:check',
   trash: 'lucide:trash-2',
   pencil: 'lucide:pencil',
+  close: 'lucide:x',
 }
 
 </script>

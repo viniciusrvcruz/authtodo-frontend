@@ -1,13 +1,33 @@
-import type { CreateTask, Task } from "~/types/Task.type"
+import type { CreateTask, Task, UpdateTask } from "~/types/Task.type"
 
 export function useTaskService() {
-  const { post } = useApiService()
+  const { post, get, put, del } = useApiService()
 
-  const create = (task: CreateTask) => {
+  const index = () => {
+    return get<Task[]>('/tasks')
+  }
+
+  const store = (task: CreateTask) => {
     return post<Task>('/tasks', task)
   }
 
+  const show = (taskId: string) => {
+    return get<Task>(`/tasks/${taskId}`)
+  }
+
+  const update = (task: UpdateTask, taskId: string) => {
+    return put<Task>(`/tasks/${taskId}`, task)
+  }
+
+  const destroy = (taskId: string) => {
+    return del<Task>(`/tasks/${taskId}`)
+  }
+
   return {
-    create, 
+    index,
+    store,
+    show,
+    update,
+    destroy,
   }
 }

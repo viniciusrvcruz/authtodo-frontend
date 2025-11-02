@@ -14,3 +14,14 @@ export const createTaskSchema = taskSchema.pick({
   name: true,
   description: true
 })
+
+export const updateTaskSchema = taskSchema.pick({
+  id: true,
+  name: true,
+  description: true,
+  is_completed: true,
+})
+.partial()
+.extend({
+  id: taskSchema.shape.id,
+})
