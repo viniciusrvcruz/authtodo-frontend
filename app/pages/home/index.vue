@@ -11,7 +11,7 @@ const selectedFilter = ref<FilterType>(FilterType.ALL)
 onBeforeMount(() => {
   service.index()
     .then(taskStore.setTasks)
-    .catch(() => alert.success('get_tasks_error'))
+    .catch(() => alert.error('get_tasks_error'))
 })
 
 const filteredTasks = computed<Task[]>(() => {
@@ -29,7 +29,7 @@ const filteredTasks = computed<Task[]>(() => {
 <template>
   <div class="h-screen">
     <HomeHeader />
-    <main class="w-full px-3 py-2 space-y-5 sm:px-12 md:px-20 lg:px-32 xl:px-52 2xl:px-96 xl:py-3">
+    <main class="w-full px-3 pt-2 pb-10 space-y-5 sm:px-12 md:px-20 lg:px-32 xl:px-52 2xl:px-96 xl:py-3">
       <TaskStats />
       <TaskFormCreate />
       <TaskFilters v-model="selectedFilter" />

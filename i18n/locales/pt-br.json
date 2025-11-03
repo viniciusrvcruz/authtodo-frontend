@@ -49,7 +49,9 @@
     "create_task_error": "Não foi possível criar a tarefa",
     "get_tasks_error": "Não foi possível trazer as tarefas",
     "update_task_success": "Tarefa editada com sucesso",
-    "update_task_error": "Não foi possível editar a tarefa"
+    "update_task_error": "Não foi possível editar a tarefa",
+    "delete_task_success": "Tarefa deletada com sucesso",
+    "delete_task_error": "Nâo foi possível deletar a tarefa"
   },
   "validations": {
     "required": "O campo é obrigatório",

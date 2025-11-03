@@ -18,7 +18,7 @@ onMounted(() => {
 const onSubmit = () => {
   if(!task.value.name?.trim()) return
 
-  service.update(task.value, task.value.id)
+  service.update(task.value)
     .then(taskUpdated => {
       taskStore.update(taskUpdated)
 
@@ -26,7 +26,7 @@ const onSubmit = () => {
 
       emits('close')
     })
-    .catch(() => alert.success('update_task_error'))
+    .catch(() => alert.error('update_task_error'))
 }
 
 </script>

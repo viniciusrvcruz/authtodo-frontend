@@ -22,7 +22,7 @@ const onSubmit = () => {
 
       task.value = { ...DEFAULT_TASK_FORM }
     })
-    .catch(() => alert.success('create_task_error'))
+    .catch(() => alert.error('create_task_error'))
 }
 
 </script>

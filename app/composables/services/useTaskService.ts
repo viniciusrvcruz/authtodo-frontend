@@ -15,8 +15,8 @@ export function useTaskService() {
     return get<Task>(`/tasks/${taskId}`)
   }
 
-  const update = (task: UpdateTask, taskId: string) => {
-    return put<Task>(`/tasks/${taskId}`, task)
+  const update = (task: UpdateTask) => {
+    return put<Task>(`/tasks/${task.id}`, task)
   }
 
   const destroy = (taskId: string) => {
