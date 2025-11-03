@@ -1,8 +1,17 @@
 import { defineStore } from "pinia"
+import { FilterType } from "~/types/enums/FilterType.enum"
 import type { Task } from "~/types/Task.type"
 
 export const useTaskStore = defineStore('task', () => {
   const tasks = ref<Task[]>([])
+
+  const counts = computed(() => {
+    return {
+      [FilterType.ALL]: tasks.value.length,
+      [FilterType.COMPLETED]: tasks.value.filter(task => task.is_completed).length,
+      [FilterType.ACTIVE]: tasks.value.filter(task => !task.is_completed).length,
+    }
+  })
 
   function add(task: Task) {
     tasks.value.push(task)
@@ -30,6 +39,7 @@ export const useTaskStore = defineStore('task', () => {
 
   return {
     tasks,
+    counts,
 
     add,
     remove,

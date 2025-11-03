@@ -1,5 +1,13 @@
 <script setup lang="ts">
+import { FilterType } from '~/types/enums/FilterType.enum';
 
+const taskStore = useTaskStore()
+
+const completedPercentage = computed(() => {
+  return taskStore.counts[FilterType.ALL]
+    ? Math.round((taskStore.counts[FilterType.COMPLETED] / taskStore.counts[FilterType.ALL]) * 100)
+    : 0
+})
 </script>
 
 <template>
@@ -12,7 +20,7 @@
         <h3 class="font-semibold sm:font-bold text-gray-400 leading-none text-sm sm:text-base">
           {{ $t('components.home.task.stats.total') }}
         </h3>
-        <span class="font-bold text-2xl sm:text-3xl">3</span>
+        <span class="font-bold text-2xl sm:text-3xl">{{ taskStore.counts[FilterType.ALL] }}</span>
       </div>
     </div>
 
@@ -25,8 +33,8 @@
           {{ $t('components.home.task.stats.completed') }}
         </h3>
         <div class="flex gap-2 items-end">
-          <span class="font-bold text-2xl sm:text-3xl">1</span>
-          <span class="text-gray-400 text-xs sm:text-sm">(33%)</span>
+          <span class="font-bold text-2xl sm:text-3xl">{{ taskStore.counts[FilterType.COMPLETED] }}</span>
+          <span class="text-gray-400 text-xs sm:text-sm">({{ completedPercentage }}%)</span>
         </div>
       </div>
     </div>
@@ -39,7 +47,7 @@
         <h3 class="font-semibold sm:font-bold text-gray-400 leading-none text-sm sm:text-base">
           {{ $t('components.home.task.stats.active') }}
         </h3>
-        <span class="font-bold text-2xl sm:text-3xl">1</span>
+        <span class="font-bold text-2xl sm:text-3xl">{{ taskStore.counts[FilterType.ACTIVE] }}</span>
       </div>
     </div>
   </section>

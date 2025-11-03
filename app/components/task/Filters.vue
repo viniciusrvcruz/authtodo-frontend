@@ -2,6 +2,7 @@
 import { FilterType } from '~/types/enums/FilterType.enum'
 
 const model = defineModel<FilterType>({ default: FilterType.ALL })
+const taskStore = useTaskStore()
 
 const setFilter = (filter: FilterType) => {
   model.value = filter
@@ -22,7 +23,7 @@ const getButtonClass = (filter: FilterType) =>
       :class="getButtonClass(filter)"
       @click="setFilter(filter)"
     >
-      {{ $t(`components.home.task.filters.${filter}`, { count: 2 }) }}
+      {{ $t(`components.home.task.filters.${filter}`, { count: taskStore.counts[filter] }) }}
     </button>
   </div>
 </template>
