@@ -27,7 +27,7 @@ const filteredTasks = computed<Task[]>(() => {
 </script>
 
 <template>
-  <div class="h-screen">
+  <div class="min-h-screen">
     <HomeHeader />
     <main class="w-full px-3 pt-2 pb-10 space-y-5 sm:px-12 md:px-20 lg:px-32 xl:px-52 2xl:px-96 xl:py-3">
       <TaskStats />

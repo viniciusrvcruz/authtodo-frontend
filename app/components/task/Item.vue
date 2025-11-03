@@ -47,7 +47,7 @@ const deleteTask = () => {
 </script>
 
 <template>
-  <div class="flex justify-start items-center gap-3 p-4 bg-gray-50 rounded-2xl border border-gray-200 dark:border-gray-400">
+  <div class="flex justify-start items-center gap-3 p-4 bg-gray-50 rounded-2xl border border-gray-200 dark:bg-gray-900 dark:border-gray-800">
     <button
       class="flex justify-center items-center p-1 cursor-pointer rounded-xl border border-2 border-blue-300 w-8 h-8 aspect-square"
       :class="{'bg-blue-300 text-white': task.is_completed}"
@@ -78,13 +78,13 @@ const deleteTask = () => {
 
       <div class="flex gap-1">
         <button
-          class="flex justify-center items-center p-2 cursor-pointer rounded-xl text-gray-500 aspect-square hover:bg-gray-200"
+          class="flex justify-center items-center p-2 cursor-pointer rounded-xl text-gray-500 aspect-square hover:bg-gray-200 dark:text-gray-400 dark:hover:bg-gray-700"
           @click="startEdit"
         >
           <Icon name="pencil" size="20" />
         </button>
         <button
-          class="flex justify-center items-center p-2 cursor-pointer rounded-xl text-gray-500 aspect-square hover:bg-gray-200 hover:text-red-400"
+          class="flex justify-center items-center p-2 cursor-pointer rounded-xl text-gray-500 aspect-square dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-red-400"
           @click="deleteTask"
         >
           <Icon name="trash" size="20" />
