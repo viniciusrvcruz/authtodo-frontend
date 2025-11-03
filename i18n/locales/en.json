@@ -6,10 +6,50 @@
     },
     "modal": {
       "update_user_name": {
-        "name_label": "What’s your name",
+        "name_label": "What's your name",
         "name_placeholder": "Enter your name",
-        "title": "What’s your name?",
-        "subtitle": "Let’s personalize your experience"
+        "title": "What's your name?",
+        "subtitle": "Let's personalize your experience"
+      }
+    },
+    "home": {
+      "header": {
+        "my_tasks": "My tasks",
+        "description": "Organize your day with simplicity"
+      },
+      "user_menu": {
+        "logout": "Logout"
+      },
+      "task": {
+        "stats": {
+          "total": "Total",
+          "completed": "Completed",
+          "active": "Active"
+        },
+        "form": {
+          "name_placeholder": "Task name",
+          "description_placeholder": "Description (optional)",
+          "add": "Add"
+        },
+        "filters": {
+          "all": "All ({count})",
+          "active": "Active ({count})",
+          "completed": "Completed ({count})"
+        },
+        "empty_state": {
+          "all": {
+            "title": "No tasks here yet",
+            "subtitle": "Add tasks to organize your day"
+          },
+          "active": {
+            "title": "No active tasks",
+            "subtitle": "All your tasks are completed!"
+          },
+          "completed": {
+            "title": "No completed tasks",
+            "subtitle": "Complete your tasks to see them here"
+          }
+        }
       }
     }
   },
@@ -18,7 +58,14 @@
     "resend_code_success": "The code was resent successfully!",
     "invalid_code": "Invalid code",
     "login_error": "Unable to log in",
-    "update_user_name_error": "Unable to save the name"
+    "update_user_name_error": "Unable to save the name",
+    "create_task_success": "Task created successfully",
+    "create_task_error": "Unable to create the task",
+    "get_tasks_error": "Unable to fetch tasks",
+    "update_task_success": "Task updated successfully",
+    "update_task_error": "Unable to update the task",
+    "delete_task_success": "Task deleted successfully",
+    "delete_task_error": "Unable to delete the task"
   },
   "validations": {
     "required": "This field is required",

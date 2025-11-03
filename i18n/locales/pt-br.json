@@ -35,6 +35,20 @@
           "all": "Todas ({count})",
           "active": "Ativas ({count})",
           "completed": "Concluídas ({count})"
+        },
+        "empty_state": {
+          "all": {
+            "title": "Nenhuma tarefa por aqui",
+            "subtitle": "Adicione tarefas para organizar seu dia"
+          },
+          "active": {
+            "title": "Nenhuma tarefa ativa",
+            "subtitle": "Todas as suas tarefas estão concluídas!"
+          },
+          "completed": {
+            "title": "Nenhuma tarefa concluída",
+            "subtitle": "Complete suas tarefas para vê-las aqui"
+          }
         }
       }
     }

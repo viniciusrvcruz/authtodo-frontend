@@ -7,11 +7,13 @@ const taskStore = useTaskStore()
 const alert = useAlert()
 
 const selectedFilter = ref<FilterType>(FilterType.ALL)
+const isLoading = ref(true)
 
 onBeforeMount(() => {
   service.index()
     .then(taskStore.setTasks)
     .catch(() => alert.error('get_tasks_error'))
+    .finally(() => isLoading.value = false)
 })
 
 const filteredTasks = computed<Task[]>(() => {
@@ -34,11 +36,18 @@ const filteredTasks = computed<Task[]>(() => {
       <TaskFormCreate />
       <TaskFilters v-model="selectedFilter" />
 
-      <TaskItem
-        v-for="task in filteredTasks"
-        :key="task.id"
-        :task="task"
+      <TaskSkeleton v-if="isLoading" />
+      <TaskEmptyState
+        v-else-if="filteredTasks.length === 0"
+        :filter="selectedFilter"
       />
+      <template v-else>
+        <TaskItem
+          v-for="task in filteredTasks"
+          :key="task.id"
+          :task="task"
+        />
+      </template>
     </main>
   </div>
 </template>
