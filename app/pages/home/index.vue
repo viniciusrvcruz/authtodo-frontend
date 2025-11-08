@@ -1,7 +1,53 @@
 <script setup lang="ts">
+import { FilterType } from '~/types/enums/FilterType.enum';
+import type { Task } from '~/types/Task.type';
+
+const service = useTaskService()
+const taskStore = useTaskStore()
+const alert = useAlert()
+
+const selectedFilter = ref<FilterType>(FilterType.ALL)
+const isLoading = ref(true)
+
+onBeforeMount(() => {
+  service.index()
+    .then(taskStore.setTasks)
+    .catch(() => alert.error('get_tasks_error'))
+    .finally(() => isLoading.value = false)
+})
+
+const filteredTasks = computed<Task[]>(() => {
+  const filters = {
+    [FilterType.ALL]: taskStore.tasks,
+    [FilterType.ACTIVE]: taskStore.tasks.filter(task => !task.is_completed),
+    [FilterType.COMPLETED]: taskStore.tasks.filter(task => task.is_completed),
+  }
+
+  return filters[selectedFilter.value]
+})
 
 </script>
 
 <template>
-    <div>Home</div>
+  <div class="min-h-screen">
+    <HomeHeader />
+    <main class="w-full px-3 pt-2 pb-10 space-y-5 sm:px-12 md:px-20 lg:px-32 xl:px-52 2xl:px-96 xl:py-3">
+      <TaskStats />
+      <TaskFormCreate />
+      <TaskFilters v-model="selectedFilter" />
+
+      <TaskSkeleton v-if="isLoading" />
+      <TaskEmptyState
+        v-else-if="filteredTasks.length === 0"
+        :filter="selectedFilter"
+      />
+      <template v-else>
+        <TaskItem
+          v-for="task in filteredTasks"
+          :key="task.id"
+          :task="task"
+        />
+      </template>
+    </main>
+  </div>
 </template>

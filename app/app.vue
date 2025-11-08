@@ -1,11 +1,10 @@
 <template>
   <div class="dark:bg-gray-950 dark:text-gray-200">
-    <!-- <Navbar /> -->
-    <main>
+    <div>
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>
-    </main>
+    </div>
     <Toast />
   </div>
 </template>

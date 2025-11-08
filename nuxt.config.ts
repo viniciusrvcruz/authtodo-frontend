@@ -24,7 +24,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/icon',
     'nuxt-auth-sanctum',
-    '@primevue/nuxt-module'
+    '@primevue/nuxt-module',
+    '@pinia/nuxt',
   ],
 
   colorMode: {
@@ -67,10 +68,14 @@ export default defineNuxtConfig({
     redirectIfUnauthenticated: true,
     redirect: {
       onAuthOnly: '/login',
-      onGuestOnly: '/home'
+      onGuestOnly: '/home',
+      onLogout: '/login',
     },
     globalMiddleware: {
       enabled: true
+    },
+    endpoints: {
+      logout: '/api/auth/logout'
     },
   }
 })

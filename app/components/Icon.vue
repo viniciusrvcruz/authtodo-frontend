@@ -17,6 +17,15 @@ const ICON_MAP = {
   circle_check: 'lucide:circle-check-big',
   light_mode: 'ic:outline-light-mode',
   dark_mode: 'ic:outline-dark-mode',
+  check_circle: 'lucide:check-circle-2',
+  user: 'mdi:user',
+  list_todo: 'lucide:list-todo',
+  circle: 'lucide:circle',
+  plus: 'lucide:plus',
+  check: 'lucide:check',
+  trash: 'lucide:trash-2',
+  pencil: 'lucide:pencil',
+  close: 'lucide:x',
 }
 
 </script>

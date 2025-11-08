@@ -11,13 +11,13 @@ export const useApiService = () => {
 
   const baseURL = `${config.public.apiBaseUrl}/api`
 
-  const request = (
+  const request = async <T>(
     method: Method,
     url: string,
     payload?: object,
     options?: object
-  ) => {
-    return $fetch(url, {
+  ): Promise<T> => {
+    return $fetch<T>(url, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
@@ -25,26 +25,26 @@ export const useApiService = () => {
       },
       credentials: 'include',
       method,
-      ...(method === Method.GET ? {query: payload} : {body: payload}),
+      ...(method === Method.GET ? { query: payload } : { body: payload }),
       baseURL,
       ...options,
     })
   }
 
-  const get = (url: string, query?: object, options?: object) => {
-    return request(Method.GET, url, query, options)
+  const get = <T>(url: string, query?: object, options?: object): Promise<T> => {
+    return request<T>(Method.GET, url, query, options)
   }
 
-  const post = (url: string, body: object, options?: object) => {
-    return request(Method.POST, url, body, options)
+  const post = <T>(url: string, body?: object, options?: object): Promise<T> => {
+    return request<T>(Method.POST, url, body, options)
   }
 
-  const put = (url: string, body: object, options?: object) => {
-    return request(Method.PUT, url, body, options)
+  const put = <T>(url: string, body: object, options?: object): Promise<T> => {
+    return request<T>(Method.PUT, url, body, options)
   }
 
-  const del = (url: string, options?: object) => {
-    return request(Method.DELETE, url, options)
+  const del = <T>(url: string, options?: object): Promise<T> => {
+    return request<T>(Method.DELETE, url, options)
   }
 
   return {

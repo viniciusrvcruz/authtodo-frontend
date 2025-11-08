@@ -11,6 +11,46 @@
         "title": "Como você se chama?",
         "subtitle": "Vamos personalizar sua experiência"
       }
+    },
+    "home": {
+      "header": {
+        "my_tasks": "Minhas tarefas",
+        "description": "Organize seu dia com simplicidade"
+      },
+      "user_menu": {
+        "logout": "Sair"
+      },
+      "task": {
+        "stats": {
+          "total": "Total",
+          "completed": "Concluídas",
+          "active": "Ativas"
+        },
+        "form": {
+          "name_placeholder": "Nome da tarefa",
+          "description_placeholder": "Descrição (opicional)",
+          "add": "Adicionar"
+        },
+        "filters": {
+          "all": "Todas ({count})",
+          "active": "Ativas ({count})",
+          "completed": "Concluídas ({count})"
+        },
+        "empty_state": {
+          "all": {
+            "title": "Nenhuma tarefa por aqui",
+            "subtitle": "Adicione tarefas para organizar seu dia"
+          },
+          "active": {
+            "title": "Nenhuma tarefa ativa",
+            "subtitle": "Todas as suas tarefas estão concluídas!"
+          },
+          "completed": {
+            "title": "Nenhuma tarefa concluída",
+            "subtitle": "Complete suas tarefas para vê-las aqui"
+          }
+        }
+      }
     }
   },
   "alerts": {
@@ -18,7 +58,14 @@
     "resend_code_success": "O código foi reenviado com sucesso!",
     "invalid_code": "Código inválido",
     "login_error": "Não foi possível fazer o login",
-    "update_user_name_error": "Não foi possível salvar o nome"
+    "update_user_name_error": "Não foi possível salvar o nome",
+    "create_task_success": "Tarefa criada com sucesso",
+    "create_task_error": "Não foi possível criar a tarefa",
+    "get_tasks_error": "Não foi possível trazer as tarefas",
+    "update_task_success": "Tarefa editada com sucesso",
+    "update_task_error": "Não foi possível editar a tarefa",
+    "delete_task_success": "Tarefa deletada com sucesso",
+    "delete_task_error": "Nâo foi possível deletar a tarefa"
   },
   "validations": {
     "required": "O campo é obrigatório",
