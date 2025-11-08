@@ -91,11 +91,35 @@
     "hero": {
       "title": "Organize sua vida com simplicidade",
       "subtitle": "Gerencie suas tarefas de forma intuitiva e mantenha-se produtivo todos os dias.",
+      "cta": "Comece Gratuitamente",
       "features": {
         "easy": "Fácil de usar",
         "sync": "Sempre sincronizado",
         "secure": "100% seguro"
       }
+    },
+    "features": {
+      "title": "Tudo que você precisa para se manter organizado",
+      "easy": {
+        "title": "Fácil de usar",
+        "description": "Interface intuitiva que permite focar no que realmente importa"
+      },
+      "sync": {
+        "title": "Sempre sincronizado",
+        "description": "Acesse suas tarefas de qualquer lugar, em qualquer dispositivo"
+      },
+      "secure": {
+        "title": "100% seguro",
+        "description": "Seus dados protegidos com autenticação moderna"
+      }
+    },
+    "cta": {
+      "title": "Pronto para se organizar?",
+      "subtitle": "Junte-se a milhares de usuários que já gerenciam suas tarefas com eficiência",
+      "button": "Começar Agora"
+    },
+    "footer": {
+      "rights": "© {year} AuthTodo. Todos os direitos reservados."
     }
   }
 }
