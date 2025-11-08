@@ -19,6 +19,8 @@
     </div>
 
     <div class="flex gap-2 items-center">
+      <LanguageSwitcher />
+
       <ToggleThemeButton />
 
       <HomeUserMenu />

@@ -26,6 +26,9 @@ const ICON_MAP = {
   trash: 'lucide:trash-2',
   pencil: 'lucide:pencil',
   close: 'lucide:x',
+  globe: 'lucide:globe',
+  brazil: 'twemoji:flag-brazil',
+  usa: 'twemoji:flag-united-states',
 }
 
 </script>
