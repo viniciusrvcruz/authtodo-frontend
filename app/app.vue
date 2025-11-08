@@ -1,8 +1,10 @@
 <template>
-  <div class="min-h-screen dark:bg-gray-950 dark:text-gray-200">
-    <Navbar />
-    <main>
-      <NuxtPage />
-    </main>
+  <div class="dark:bg-gray-950 dark:text-gray-200">
+    <div>
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </div>
+    <Toast />
   </div>
 </template>

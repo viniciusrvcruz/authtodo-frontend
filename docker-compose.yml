@@ -1,9 +1,15 @@
 services:
   authtodo_frontend:
-    build: .
+    image: node:24.0
     container_name: authtodo_frontend
+    working_dir: /app
     volumes:
       - .:/app
     ports:
       - 3000:3000
-    command: ["tail", "-f", "/dev/null"]
+    command: sh -c "npm install && npm run dev"
+    networks:
+      - authtodo_network
+
+networks:
+  authtodo_network:

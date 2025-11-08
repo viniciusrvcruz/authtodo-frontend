@@ -3,6 +3,99 @@
   "components": {
     "navbar": {
       "login": "Fazer login"
+    },
+    "modal": {
+      "update_user_name": {
+        "name_label": "Como você se chama",
+        "name_placeholder": "Digite o seu nome",
+        "title": "Como você se chama?",
+        "subtitle": "Vamos personalizar sua experiência"
+      }
+    },
+    "home": {
+      "header": {
+        "my_tasks": "Minhas tarefas",
+        "description": "Organize seu dia com simplicidade"
+      },
+      "user_menu": {
+        "logout": "Sair"
+      },
+      "task": {
+        "stats": {
+          "total": "Total",
+          "completed": "Concluídas",
+          "active": "Ativas"
+        },
+        "form": {
+          "name_placeholder": "Nome da tarefa",
+          "description_placeholder": "Descrição (opicional)",
+          "add": "Adicionar"
+        },
+        "filters": {
+          "all": "Todas ({count})",
+          "active": "Ativas ({count})",
+          "completed": "Concluídas ({count})"
+        },
+        "empty_state": {
+          "all": {
+            "title": "Nenhuma tarefa por aqui",
+            "subtitle": "Adicione tarefas para organizar seu dia"
+          },
+          "active": {
+            "title": "Nenhuma tarefa ativa",
+            "subtitle": "Todas as suas tarefas estão concluídas!"
+          },
+          "completed": {
+            "title": "Nenhuma tarefa concluída",
+            "subtitle": "Complete suas tarefas para vê-las aqui"
+          }
+        }
+      }
+    }
+  },
+  "alerts": {
+    "send_code_error": "Não foi possível enviar o código para o email informado",
+    "resend_code_success": "O código foi reenviado com sucesso!",
+    "invalid_code": "Código inválido",
+    "login_error": "Não foi possível fazer o login",
+    "update_user_name_error": "Não foi possível salvar o nome",
+    "create_task_success": "Tarefa criada com sucesso",
+    "create_task_error": "Não foi possível criar a tarefa",
+    "get_tasks_error": "Não foi possível trazer as tarefas",
+    "update_task_success": "Tarefa editada com sucesso",
+    "update_task_error": "Não foi possível editar a tarefa",
+    "delete_task_success": "Tarefa deletada com sucesso",
+    "delete_task_error": "Nâo foi possível deletar a tarefa"
+  },
+  "validations": {
+    "required": "O campo é obrigatório",
+    "email": "O campo deve ser um e-mail válido"
+  },
+  "login": {
+    "title": "Acesse a plataforma",
+    "subtitle": "Faça login para acessar suas tarefas",
+    "divider": "Ou",
+    "email_placeholder": "Seu melhor email",
+    "continue_button": "Continuar",
+    "auth_providers": {
+      "google": "Continuar com Google",
+      "github": "Continuar com GitHub"
+    },
+    "otp": {
+      "title": "Confira sua caixa de entrada",
+      "instruction": "Informe o código de verificação que enviamos para",
+      "resend_button": "Reenviar"
+    }
+  },
+  "landing": {
+    "hero": {
+      "title": "Organize sua vida com simplicidade",
+      "subtitle": "Gerencie suas tarefas de forma intuitiva e mantenha-se produtivo todos os dias.",
+      "features": {
+        "easy": "Fácil de usar",
+        "sync": "Sempre sincronizado",
+        "secure": "100% seguro"
+      }
     }
   }
 }
