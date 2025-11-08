@@ -44,9 +44,13 @@ export default defineNuxtConfig({
   i18n: {
     defaultLocale: 'pt-br',
     locales: [
-      { code: 'en', name: 'English', file: 'en.json' },
-      { code: 'pt-br', name: 'Português (Brasil)', file: 'pt-br.json' }
-    ]
+      { code: 'pt-br', name: 'Português (Brasil)', file: 'pt-br.json', icon: 'brazil' },
+      { code: 'en', name: 'English', file: 'en.json', icon: 'usa' },
+    ],
+    strategy: 'no_prefix',
+    detectBrowserLanguage: {
+      redirectOn: 'all'
+    }
   },
 
   icon: {

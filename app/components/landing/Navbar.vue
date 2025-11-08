@@ -10,11 +10,16 @@
     </span>
 
     <div class="flex items-center gap-3">
+      <LanguageSwitcher />
+
       <ToggleThemeButton />
 
-      <button class="flex justify-center items-center px-5 py-2 rounded-xl cursor-pointer bg-blue-400 hover:bg-blue-300 dark:hover:bg-gray-800">
+      <NuxtLink
+        to="/login"
+        class="flex justify-center items-center px-5 py-2 rounded-xl cursor-pointer bg-blue-400 hover:bg-blue-300 dark:hover:bg-gray-800"
+      >
         {{ $t('components.navbar.login') }}
-      </button>
+      </NuxtLink>
     </div>
   </nav>
 </template>
