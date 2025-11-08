@@ -91,11 +91,35 @@
     "hero": {
       "title": "Organize your life with simplicity",
       "subtitle": "Manage your tasks intuitively and stay productive every day.",
+      "cta": "Get Started for Free",
       "features": {
         "easy": "Easy to use",
         "sync": "Always synced",
         "secure": "100% secure"
       }
+    },
+    "features": {
+      "title": "Everything you need to stay organized",
+      "easy": {
+        "title": "Easy to use",
+        "description": "Intuitive interface that lets you focus on what matters most"
+      },
+      "sync": {
+        "title": "Always synced",
+        "description": "Access your tasks from anywhere, on any device"
+      },
+      "secure": {
+        "title": "100% secure",
+        "description": "Your data is protected with modern authentication"
+      }
+    },
+    "cta": {
+      "title": "Ready to get organized?",
+      "subtitle": "Join thousands of users who are already managing their tasks efficiently",
+      "button": "Start Now"
+    },
+    "footer": {
+      "rights": "© {year} AuthTodo. All rights reserved."
     }
   }
 }
