@@ -1,8 +1,22 @@
 <script setup>
+const { t } = useI18n()
+
 definePageMeta({
   sanctum: {
     excluded: true,
   }
+})
+
+useHead({
+  title: t('seo.landing.title'),
+  meta: [
+    { name: 'description', content: t('seo.landing.description') },
+    { name: 'keywords', content: t('seo.landing.keywords') },
+    { property: 'og:title', content: t('seo.landing.og_title') },
+    { property: 'og:description', content: t('seo.landing.og_description') },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:image', content: '/logo.png' },
+  ]
 })
 </script>
 
