@@ -131,7 +131,7 @@ Sistema de tipos robusto:
 ### 1. Clone o repositório
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/viniciusrvcruz/authtodo-frontend.git
 cd authtodo-frontend
 ```
 
