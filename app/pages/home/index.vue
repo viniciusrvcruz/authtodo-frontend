@@ -2,6 +2,17 @@
 import { FilterType } from '~/types/enums/FilterType.enum';
 import type { Task } from '~/types/Task.type';
 
+const { t } = useI18n()
+
+useHead({
+  title: t('seo.home.title'),
+  meta: [
+    { name: 'description', content: t('seo.home.description') },
+    { name: 'robots', content: 'noindex, nofollow' },
+    { property: 'og:image', content: '/logo.png' },
+  ]
+})
+
 const service = useTaskService()
 const taskStore = useTaskStore()
 const alert = useAlert()

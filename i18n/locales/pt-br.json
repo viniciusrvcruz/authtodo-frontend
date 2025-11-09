@@ -87,6 +87,23 @@
       "resend_button": "Reenviar"
     }
   },
+  "seo": {
+    "landing": {
+      "title": "AuthTodo - Organize suas tarefas de forma simples e segura",
+      "description": "Gerencie suas tarefas de forma eficiente com AuthTodo. Sincronize em todos os dispositivos com segurança.",
+      "keywords": "todo, tarefas, produtividade, organização, gerenciamento",
+      "og_title": "AuthTodo - Organize suas tarefas",
+      "og_description": "Gerencie suas tarefas de forma eficiente com AuthTodo"
+    },
+    "login": {
+      "title": "Login - AuthTodo",
+      "description": "Faça login no AuthTodo para acessar suas tarefas"
+    },
+    "home": {
+      "title": "Minhas Tarefas - AuthTodo",
+      "description": "Gerencie e organize suas tarefas diárias"
+    }
+  },
   "landing": {
     "hero": {
       "title": "Organize sua vida com simplicidade",
