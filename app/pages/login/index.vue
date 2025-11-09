@@ -1,6 +1,17 @@
 <script lang="ts" setup>
 import LoginForm from '~/components/auth/LoginForm.vue';
 
+const { t } = useI18n()
+
+useHead({
+  title: t('seo.login.title'),
+  meta: [
+    { name: 'description', content: t('seo.login.description') },
+    { name: 'robots', content: 'noindex, nofollow' },
+    { property: 'og:image', content: '/logo.png' },
+  ]
+})
+
 enum AuthProvider {
   GOOGLE = 'google',
   GITHUB = 'github',

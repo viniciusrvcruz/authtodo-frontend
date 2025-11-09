@@ -87,6 +87,23 @@
       "resend_button": "Resend"
     }
   },
+  "seo": {
+    "landing": {
+      "title": "AuthTodo - Organize your tasks simply and securely",
+      "description": "Manage your tasks efficiently with AuthTodo. Sync across all devices securely.",
+      "keywords": "todo, tasks, productivity, organization, management",
+      "og_title": "AuthTodo - Organize your tasks",
+      "og_description": "Manage your tasks efficiently with AuthTodo"
+    },
+    "login": {
+      "title": "Login - AuthTodo",
+      "description": "Log in to AuthTodo to access your tasks"
+    },
+    "home": {
+      "title": "My Tasks - AuthTodo",
+      "description": "Manage and organize your daily tasks"
+    }
+  },
   "landing": {
     "hero": {
       "title": "Organize your life with simplicity",
