@@ -18,6 +18,8 @@
 
 <br>
 
+> 🔗 **Backend**: [authtodo-backend](https://github.com/viniciusrvcruz/authtodo-backend)
+
 ## 🎯 Sobre o Projeto
 
 **AuthTodo** é uma aplicação de gerenciamento de tarefas (To-Do List) desenvolvida com Nuxt 4, focada em oferecer uma experiência moderna, responsiva e segura. O projeto implementa autenticação baseada em cookies com suporte a múltiplos provedores (Google, GitHub e OTP por email).
