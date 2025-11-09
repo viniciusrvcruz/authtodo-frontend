@@ -30,6 +30,15 @@
 - Disponibilizar a aplicação em múltiplos idiomas
 - Garantir responsividade em todos os dispositivos
 
+## 📸 Screenshots
+
+### Tema Claro
+<img src="./docs/images/light/landing-page.png" width="32%" /> <img src="./docs/images/light/login-page.png" width="32%" /> <img src="./docs/images/light/home-page.png" width="32%" />
+
+### Tema Escuro
+<img src="./docs/images/dark/landing-page.png" width="32%" /> <img src="./docs/images/dark/login-page.png" width="32%" /> <img src="./docs/images/dark/home-page.png" width="32%" />
+
+
 ## 🚀 Tecnologias Utilizadas
 
 | Categoria | Tecnologias |
