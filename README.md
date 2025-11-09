@@ -1,26 +1,26 @@
 # AuthTodo Frontend
 
-> Aplicação web moderna para gerenciamento de tarefas com autenticação segura e interface intuitiva.
+<div align="center">
 
-## 📋 Índice
+![Nuxt](https://img.shields.io/badge/Nuxt-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white)
+![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![PrimeVue](https://img.shields.io/badge/PrimeVue-41B883?style=for-the-badge&logo=vue.js&logoColor=white)
+![Pinia](https://img.shields.io/badge/Pinia-FFD859?style=for-the-badge&logo=vue.js&logoColor=black)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-- [Sobre o Projeto](#-sobre-o-projeto)
-- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
-- [Estrutura do Projeto](#-estrutura-do-projeto)
-- [Pré-requisitos](#-pré-requisitos)
-- [Instalação](#-instalação)
-- [Configuração](#-configuração)
-- [Como Usar](#-como-usar)
-- [Funcionalidades](#-funcionalidades)
-- [Arquitetura e Padrões](#-arquitetura-e-padrões)
-- [Internacionalização](#-internacionalização)
-- [Docker](#-docker)
-- [Contribuindo](#-contribuindo)
-- [Licença](#-licença)
+</div>
+
+### **Aplicação web moderna para gerenciamento de tarefas com autenticação segura e interface intuitiva**
+*Desenvolvida com Nuxt 4, Vue 3 e TypeScript*
+
+<br>
 
 ## 🎯 Sobre o Projeto
 
-**AuthTodo** é uma aplicação de gerenciamento de tarefas (To-Do List) desenvolvida com Nuxt 4, focada em oferecer uma experiência moderna, responsiva e segura. O projeto implementa autenticação via Laravel Sanctum com suporte a múltiplos provedores (Google, GitHub e OTP por email).
+**AuthTodo** é uma aplicação de gerenciamento de tarefas (To-Do List) desenvolvida com Nuxt 4, focada em oferecer uma experiência moderna, responsiva e segura. O projeto implementa autenticação baseada em cookies com suporte a múltiplos provedores (Google, GitHub e OTP por email).
 
 ### Objetivos
 
@@ -32,41 +32,15 @@
 
 ## 🚀 Tecnologias Utilizadas
 
-### Core
-
-- **[Nuxt 4](https://nuxt.com/)** `^4.0.3` - Framework Vue.js para aplicações web
-- **[Vue 3](https://vuejs.org/)** `^3.5.20` - Framework JavaScript progressivo
-- **[TypeScript](https://www.typescriptlang.org/)** - Superset JavaScript com tipagem estática
-
-### Estilização
-
-- **[Tailwind CSS](https://tailwindcss.com/)** `^4.1.12` - Framework CSS utility-first
-- **[PrimeVue](https://primevue.org/)** `^4.3.9` - Biblioteca de componentes UI
-- **[@primeuix/themes](https://primevue.org/themes/)** `^1.2.3` - Sistema de temas do PrimeVue
-
-### Gerenciamento de Estado
-
-- **[Pinia](https://pinia.vuejs.org/)** `^3.0.3` - Store oficial do Vue 3
-- **[@pinia/nuxt](https://pinia.vuejs.org/ssr/nuxt.html)** `^0.11.2` - Integração Pinia com Nuxt
-
-### Autenticação
-
-- **[nuxt-auth-sanctum](https://github.com/manchenkoff/nuxt-auth-sanctum)** `^1.2.0` - Integração Laravel Sanctum
-
-### Validação
-
-- **[Vee-Validate](https://vee-validate.logaretm.com/)** `^4.15.1` - Validação de formulários
-- **[@vee-validate/zod](https://vee-validate.logaretm.com/v4/integrations/zod/)** `^4.15.1` - Integração com Zod
-- **[Zod](https://zod.dev/)** - Schema validation (implícito)
-
-### Internacionalização
-
-- **[@nuxtjs/i18n](https://i18n.nuxtjs.org/)** `^10.0.6` - Suporte a múltiplos idiomas
-
-### Outros
-
-- **[@nuxtjs/color-mode](https://color-mode.nuxtjs.org/)** `^3.5.2` - Gerenciamento de tema claro/escuro
-- **[@nuxt/icon](https://nuxt.com/modules/icon)** `^2.0.0` - Sistema de ícones
+| Categoria | Tecnologias |
+|-----------|-------------|
+| **Core** | [Nuxt 4](https://nuxt.com/) • [Vue 3](https://vuejs.org/) • [TypeScript](https://www.typescriptlang.org/) |
+| **Estilização** | [Tailwind CSS](https://tailwindcss.com/) • [PrimeVue](https://primevue.org/) |
+| **Estado** | [Pinia](https://pinia.vuejs.org/) • [@pinia/nuxt](https://pinia.vuejs.org/ssr/nuxt.html) |
+| **Autenticação** | [nuxt-auth-sanctum](https://github.com/manchenkoff/nuxt-auth-sanctum) |
+| **Validação** | [Vee-Validate](https://vee-validate.logaretm.com/) • [Zod](https://zod.dev/) |
+| **i18n** | [@nuxtjs/i18n](https://i18n.nuxtjs.org/) |
+| **Outros** | [@nuxtjs/color-mode](https://color-mode.nuxtjs.org/) • [@nuxt/icon](https://nuxt.com/modules/icon) |
 
 ## 📁 Estrutura do Projeto
 
@@ -205,7 +179,7 @@ A aplicação estará disponível em `http://localhost:3000`
 
 - **OAuth Social**: Login com Google e GitHub
 - **OTP por Email**: Autenticação passwordless via código de verificação
-- **Sessão Persistente**: Gerenciada via Laravel Sanctum (cookies)
+- **Sessão Persistente**: Gerenciada via cookies HTTP-only
 
 ### Gerenciamento de Tarefas
 
