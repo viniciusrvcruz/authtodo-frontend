@@ -184,6 +184,22 @@ npm run dev
 
 A aplicação estará disponível em `http://localhost:3000`
 
+### Docker
+
+Executar com Docker Compose:
+
+```bash
+docker-compose up -d
+```
+
+A aplicação estará disponível em `http://localhost:3000`
+
+Parar os containers:
+
+```bash
+docker-compose down
+```
+
 ## ✨ Funcionalidades
 
 ### Autenticação
@@ -243,22 +259,6 @@ O projeto suporta múltiplos idiomas através do módulo `@nuxtjs/i18n`.
 
 - 🇧🇷 Português (Brasil) - `pt-br`
 - 🇺🇸 Inglês - `en`
-
-## 🐳 Docker
-
-### Executar com Docker Compose
-
-```bash
-docker-compose up -d
-```
-
-A aplicação estará disponível em `http://localhost:3000`
-
-### Parar os Containers
-
-```bash
-docker-compose down
-```
 
 ## 🤝 Contribuindo
 
