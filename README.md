@@ -189,7 +189,7 @@ A aplicação estará disponível em `http://localhost:3000`
 Executar com Docker Compose:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 A aplicação estará disponível em `http://localhost:3000`
@@ -197,7 +197,7 @@ A aplicação estará disponível em `http://localhost:3000`
 Parar os containers:
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 ## ✨ Funcionalidades
